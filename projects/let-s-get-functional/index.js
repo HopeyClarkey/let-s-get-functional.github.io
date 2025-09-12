@@ -18,17 +18,25 @@
  *
  *    IMPORTANT: Make sure you replace <YOUR_GITHUB_FOLDER with your actual github folder name that is in your workspace.
  */
+
+_.filter = function(array, func){
+    const output =[];
+    for (let i  = 0; i< array.length; i++){
+        if (func(array[i], i, array)){
+            output.push(array[i])
+        }
+    }
+    return output;
+}
+
+// will need .filter, .map, & .reduce
 //i- take an array
 //finds number of male Customers
 var maleCount = function(array) {
-  let stArr =[];
-  for (var i = 0; i < array.length; i++){
-    if (array[i].gender === 'male'){
-        stArr.push(array[i]);
-    }
-  }
-  return stArr.length;
+const males = _.filter(array, (cust) => cust.gender === 'male');
+    return males.length;
 };
+
 
 var femaleCount = function(array){
     let stArr =[];
