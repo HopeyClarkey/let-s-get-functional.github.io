@@ -38,7 +38,7 @@ const males = _.filter(array, (cust) => cust.gender === 'male');
 };
 
 
-var femaleCount = function(array){
+/*var femaleCount = function(array){
     let stArr =[];
     for (var i = 0; i < array.length; i++){
       if (array[i].gender === 'female'){
@@ -47,7 +47,12 @@ var femaleCount = function(array){
     }
     return stArr.length;
   };
+*/
 
+var femaleCount = function(array){
+    const females = _.filter(array, (cust) => cust.gender === 'female');
+    return females.length;
+}
 var oldestCustomer;
 
 var youngestCustomer;
