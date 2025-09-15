@@ -52,22 +52,38 @@ const males = _.filter(array, (cust) => cust.gender === 'male');
 var femaleCount = function(array){
     const females = _.filter(array, (cust) => cust.gender === 'female');
     return females.length;
-}
-var oldestCustomer;
+};
 
-var youngestCustomer;
+var oldestCustomer = function(array){
+};
 
-var averageBalance;
+var youngestCustomer = function(array){
 
-var firstLetterCount;
+};
 
-var friendFirstLetterCount;
+var averageBalance = function(array){
 
-var friendsCount;
+};
 
-var topThreeTags;
+var firstLetterCount = function(array){
 
-var genderCount;
+};
+
+var friendFirstLetterCount = function(array){
+
+};
+
+var friendsCount = function(array){
+
+};
+
+var topThreeTags = function(array){
+
+};
+
+var genderCount = function(array){
+    
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
