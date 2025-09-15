@@ -65,12 +65,14 @@ var averageBalance = function(array){
 
 };
 
-var firstLetterCount = function(array){
-
+var firstLetterCount = function(array, letter){
+    let users = array.filter(user =>user.name.startsWith(letter));
+    return users.length;
 };
 
-var friendFirstLetterCount = function(array){
-
+var friendFirstLetterCount = function(array, letter){
+    let users = array.filter(user =>user.name.startsWith(letter));
+    return users.length;
 };
 
 var friendsCount = function(array){
@@ -82,7 +84,7 @@ var topThreeTags = function(array){
 };
 
 var genderCount = function(array){
-    
+
 };
 
 //////////////////////////////////////////////////////////////////////
