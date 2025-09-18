@@ -55,6 +55,9 @@ var femaleCount = function(array){
 };
 
 var oldestCustomer = function(array){
+    const oldest = array.filter(cust => cust.age);
+    return oldest.reduce((largest, current) =>
+    (current >largest ? current : largest), oldest[0]);
 };
 
 var youngestCustomer = function(array){
@@ -66,12 +69,12 @@ var averageBalance = function(array){
 };
 
 var firstLetterCount = function(array, letter){
-    let users = array.filter(user =>user.name.startsWith(letter));
+    let users = array.filter(user => user.name.startsWith(letter));
     return users.length;
 };
 
 var friendFirstLetterCount = function(array, letter){
-    let users = array.filter(user =>user.name.startsWith(letter));
+    let users = array.filter(user => user.name.startsWith(letter));
     return users.length;
 };
 
