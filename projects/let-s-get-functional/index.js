@@ -65,7 +65,14 @@ var oldestCustomer = function(array){
 };
 
 var youngestCustomer = function(array){
-
+    let youngest = array.reduce((youngest, currently) => {
+//declare variable, reduce array, params youngest and currently into function
+        return currently.age < youngest.age ? currently : youngest;
+//take the current age, compare to the youngest age, yep, current, nope, youngest
+    }).name;
+//grab that name on the outside of the reduce
+    return youngest;
+//bring that variable home
 };
 
 var averageBalance = function(array){
