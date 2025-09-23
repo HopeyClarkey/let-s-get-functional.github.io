@@ -55,8 +55,13 @@ var femaleCount = function(array){
 };
 
 var oldestCustomer = function(array){
-    let oldest = array.filter(cust => cust.age);
-    oldest.reduce((largest, current) => (current > largest ? current : largest), oldest[0]);
+    let oldest = array.reduce((largest, current) => {
+// declare variable, reduce array with the 'largest' vs the current value
+        return current.age > largest.age ? current : largest;
+//whoo terenary, is current > 'largest' ? yep, current, nope, largest;
+    }).name;
+//and now we are back outside, with dot notation of the name assiged to variable
+    return oldest; //returrrn that variable
 };
 
 var youngestCustomer = function(array){
