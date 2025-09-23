@@ -114,7 +114,16 @@ var firstLetterCount = function(array, letter){
 
 var friendFirstLetterCount = function(array, name, letter){
 //takes an array, a person whose friends need to be looked up, and a lookup letter
-
+    let stArr = [];
+    var stArrToo = [];
+    for (let i = 0; i <array.length; i++){
+        if (array.name === name){
+            stArr.push(array[1]);
+        } // come out of if statement
+    } // come out of for loop
+        let frnds = stArr[0].friends.map((frnd) => frnd.name.toLowerCase()); //create array with 
+        let stArrToo = frnds.filter((frndsW) => frndsW.startsWith(letter.toLowerCase()));
+    return stArrToo.length;
 };
 
 var friendsCount = function(array){
