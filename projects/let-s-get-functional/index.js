@@ -56,8 +56,7 @@ var femaleCount = function(array){
 
 var oldestCustomer = function(array){
     let oldest = array.filter(cust => cust.age);
-    oldest.reduce((largest, current) => (current >largest ? current : largest), oldest[0]);
-    return oldest[0].toString();
+    oldest.reduce((largest, current) => (current > largest ? current : largest), oldest[0]);
 };
 
 var youngestCustomer = function(array){
@@ -65,6 +64,11 @@ var youngestCustomer = function(array){
 };
 
 var averageBalance = function(array){
+    let output = 0;
+    let stArr = [];
+    for(let i = 0; i < data.length; i ++){
+    stArr.push(array[i]."balance".split(1));
+    }
 
 };
 
