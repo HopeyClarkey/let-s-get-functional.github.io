@@ -64,12 +64,18 @@ var youngestCustomer = function(array){
 };
 
 var averageBalance = function(array){
-    let output = 0;
-    let stArr = [];
-    for(let i = 0; i < data.length; i ++){
-    stArr.push(array[i]."balance".split(1));
+    let stArr = []; //create storage array for balances
+    let output =0;
+    for(let i = 0; i < array.length; i ++){ //loop through and push balances
+        stArr.push(array[i].balance);
+    } 
+    stArr = stArr.map((balances) => balances.replace(/[$,]/g, ''));
+    stArr = stArr.map((numbers) => Number(numbers));
+    for(let j = 0; j < stArr.length; j++){
+        output += stArr[j];
     }
-
+    output = output / stArr.length;
+    return output;
 };
 
 var firstLetterCount = function(array, letter){
