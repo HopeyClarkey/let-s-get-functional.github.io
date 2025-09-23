@@ -76,30 +76,45 @@ var youngestCustomer = function(array){
 };
 
 var averageBalance = function(array){
-    let stArr = []; //create storage array for balances
-    let output =0; //create output for number to fall
-    for(let i = 0; i < array.length; i ++){ //loop through and push balances
-        stArr.push(array[i].balance); //push key values of balance to starr
+    let stArr = []; 
+//create storage array for balances
+    let output =0; 
+//create output for number to fall
+    for(let i = 0; i < array.length; i ++){ 
+//loop through and push balances
+        stArr.push(array[i].balance); 
+//push key values of balance to starr
     } 
-    stArr = stArr.map((balances) => balances.replace(/[$,]/g, '')); //remove with regex $ & ,
-    stArr = stArr.map((numbers) => Number(numbers)); //turn all those things to nummbass
-    for(let j = 0; j < stArr.length; j++){ //loop through again
-        output += stArr[j]; //update the output #
+//get out of for loop
+    stArr = stArr.map((balances) => balances.replace(/[$,]/g, '')); 
+//remove with regex $ & ,
+    stArr = stArr.map((numbers) => Number(numbers)); 
+//turn all those things to nummbas
+    for(let j = 0; j < stArr.length; j++){ 
+//loop through again
+        output += stArr[j]; 
+//update the output #
     }
-    output = output / stArr.length; //reassign output to divide that output # by the stArr lenght
-    return output; //return that new outputt
+//get out of for loop
+    output = output / stArr.length; 
+//reassign output to divide that output # by the stArr length
+    return output; //return that new output
         //boom!
 };
 
 var firstLetterCount = function(array, letter){
-    let users = array.map((user) => user.name.toLowerCase()); //map new array moving all entries to lowercase
-    let mappedUsers = users.filter((moreUsers) => moreUsers.startsWith(letter.toLowerCase())); //map another array comparing the start letter(lowercased)
-    return mappedUsers.length; //return the new array length
+//takes an array and a lookup letter
+    let users = array.map((user) => user.name.toLowerCase()); 
+//map new array moving all entries to lowercase
+    let mappedUsers = users.filter((moreUsers) => moreUsers.startsWith(letter.toLowerCase())); 
+//filter another array comparing the start letter(lowercased)
+    return mappedUsers.length;
+//return the new array length
 };
 
-var friendFirstLetterCount = function(array, letter){
-    let users = array.filter(user => user.name.startsWith(letter.toLowerCase));
-    return users.length;
+var friendFirstLetterCount = function(array, name, letter){
+//takes an array, a person whose friends need to be looked up, and a lookup letter
+
 };
 
 var friendsCount = function(array){
