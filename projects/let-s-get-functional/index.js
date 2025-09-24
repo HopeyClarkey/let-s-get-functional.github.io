@@ -144,6 +144,15 @@ var topThreeTags = function(array){
 };
 
 var genderCount = function(array){
+    const males = _.filter(array, (cust) => cust.gender === 'male');
+    const females = _.filter(array, (cust) => cust.gender === 'female');
+    const nonBi = _.filter(array, (cust) => cust.gender === 'non-binary');
+    let obj = {
+        male: (males.length),
+        female: (females.length),
+        'non-binary': (nonBi.length)
+    };
+    return obj;
 
 };
 
