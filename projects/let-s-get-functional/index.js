@@ -111,13 +111,14 @@ var firstLetterCount = function(array, letter){
     return mappedUsers.length;
 //return the new array length
 };
-
+/*
 var friendFirstLetterCount = function(array, srchName, letter){
     const results = array.filter((cust) => cust.name === srchName);
 
+    return results;
+console.log(results);
 }
-
-
+*/
 
 
 
@@ -132,7 +133,7 @@ var friendFirstLetterCount = function(array, srchName, letter){
       //  let frnds = stArr[0].friends.map((frnd) => frnd.name.toLowerCase()); //create array with 
        // let stArrToo = frnds.filter((frndsW) => frndsW.startsWith(letter.toLowerCase()));
 //    return stArrToo.length;
-};
+
 
 var friendsCount = function(array){
 
