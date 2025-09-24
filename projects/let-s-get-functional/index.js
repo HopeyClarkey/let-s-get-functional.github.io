@@ -111,29 +111,16 @@ var firstLetterCount = function(array, letter){
     return mappedUsers.length;
 //return the new array length
 };
-/*
-var friendFirstLetterCount = function(array, srchName, letter){
-    const results = array.filter((cust) => cust.name === srchName);
 
-    return results;
-console.log(results);
+var friendFirstLetterCount = function(array, srchName, letter){ //takes an array, a person to find, and a search letter
+    const results = array.filter((cust) => cust.name === srchName); //create filter with the elements named cust, does cust == search name?
+    let customer = results[0];//creates object out of filter array result
+    let friends = customer.friends; //defines friends array within object
+    const matchingFriends = friends.filter((friend) => friend.name[0].toLowerCase() === letter.toLowerCase()
+    //filter friends array, name element friend, also modify to lower case, and check search letter in lower case.
+    );
+    return matchingFriends.length; //return amount of array elements
 }
-*/
-
-
-
-
-    //takes an array, a person whose friends need to be looked up, and a lookup letter
-//    let stArr = [];// create storage array
- //   for (let i = 0; i < array.length; i++){ //loop through array
-  //      if (array.name === name){ //if the name mattacbes
-    //        stArr.push(array[i]);
-      //  } // come out of if statement
-    //} // come out of for loop
-      //  let frnds = stArr[0].friends.map((frnd) => frnd.name.toLowerCase()); //create array with 
-       // let stArrToo = frnds.filter((frndsW) => frndsW.startsWith(letter.toLowerCase()));
-//    return stArrToo.length;
-
 
 var friendsCount = function(array){
 
