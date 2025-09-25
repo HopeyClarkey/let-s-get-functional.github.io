@@ -143,19 +143,26 @@ var topThreeTags = function(array){
     let stArr = [];
 //create storage array
 for (let i = 0; i < array.length; i ++){
+//loop through storage array
     let user = array[i];
+// define element in array
     let userTags = user.tags;
+//define tags array to loop through
         for (let j = 0; j < userTags.length; j++){
-            stArr.push(userTags[i]);
+//loop through array
+            stArr.push(userTags[j]);
+//collect tags in array
         }
     }
     let counts = stArr.reduce((acc, tag)=>{
+//reduce count of tags to include count and tag (accumulator, tag)
         acc[tag] = (acc[tag] || 0) + 1
         return acc;
     }, {});
     let sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-    let topThree = sorted.slice(1,4);
-    console.log(topThree);
+//sort the accumulated tags by object
+    let topThree = sorted.slice(0,3).map(entry => entry[0]);
+//define and slice off the top 3 objects, then map the objects to just return the entry without the value\
     return topThree;
 };
 
