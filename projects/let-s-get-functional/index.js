@@ -112,19 +112,43 @@ var firstLetterCount = function(array, letter){
 //return the new array length
 };
 
-var friendFirstLetterCount = function(array, srchName, letter){ //takes an array, a person to find, and a search letter
-    const results = array.filter((cust) => cust.name === srchName); //create filter with the elements named cust, does cust == search name?
-    let customer = results[0];//creates object out of filter array result
-    let friends = customer.friends; //defines friends array within object
+var friendFirstLetterCount = function(array, srchName, letter){ 
+//takes an array, a person to find, and a search letter
+    const results = array.filter((cust) => cust.name === srchName); 
+//create filter with the elements named cust, does cust == search name?
+        let customer = results[0];
+//creates object out of filter array result
+        let friends = customer.friends; 
+//defines friends array within object
     const matchingFriends = friends.filter((friend) => friend.name[0].toLowerCase() === letter.toLowerCase()
-    //filter friends array, name element friend, also modify to lower case, and check search letter in lower case.
+//filter friends array, name element friend, also modify to lower case, and check search letter in lower case.
     );
-    return matchingFriends.length; //return amount of array elements
+    return matchingFriends.length; 
+//return amount of array elements
 }
 
-var friendsCount = function(array){
-
+var friendsCount = function(array, name){
+    let stArr = [];
+//will be returning an array, create storage array
+for (let i = 0; i < array.length; i ++){
+//loop through data array
+    let customer = array[i];
+//define customer 
+    let friends = customer.friends;
+//define friend group
+        for(let j = 0; j < friends.length; j ++){
+//loop thorough friend group
+        if (friends[j].name === name){
+//does the name match? push to array
+            stArr.push(customer.name);
+        }
+    }
+}
+return stArr;
+//return the storage array
 };
+
+
 
 var topThreeTags = function(array){
 
@@ -132,8 +156,11 @@ var topThreeTags = function(array){
 
 var genderCount = function(array){
     const males = _.filter(array, (cust) => cust.gender === 'male');
+//create a males array with filter- name element customer, check if key gender is male
     const females = _.filter(array, (cust) => cust.gender === 'female');
+//create female array with filter in same way
     const nonBi = _.filter(array, (cust) => cust.gender === 'non-binary');
+//create one more filter for non-binary
     let obj = {
         male: (males.length),
         female: (females.length),
