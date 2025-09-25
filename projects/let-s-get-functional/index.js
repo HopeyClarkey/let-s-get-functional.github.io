@@ -38,17 +38,6 @@ const males = _.filter(array, (cust) => cust.gender === 'male');
 };
 
 
-/*var femaleCount = function(array){
-    let stArr =[];
-    for (var i = 0; i < array.length; i++){
-      if (array[i].gender === 'female'){
-          stArr.push(array[i]);
-      }
-    }
-    return stArr.length;
-  };
-*/
-
 var femaleCount = function(array){
     const females = _.filter(array, (cust) => cust.gender === 'female');
     return females.length;
@@ -132,15 +121,15 @@ var friendsCount = function(array, name){
 //will be returning an array, create storage array
 for (let i = 0; i < array.length; i ++){
 //loop through data array
-    let customer = array[i];
+    let user = array[i];
 //define customer 
-    let friends = customer.friends;
+    let friends = user.friends;
 //define friend group
         for(let j = 0; j < friends.length; j ++){
 //loop thorough friend group
         if (friends[j].name === name){
 //does the name match? push to array
-            stArr.push(customer.name);
+            stArr.push(user.name);
         }
     }
 }
@@ -151,7 +140,23 @@ return stArr;
 
 
 var topThreeTags = function(array){
-
+    let stArr = [];
+//create storage array
+for (let i = 0; i < array.length; i ++){
+    let user = array[i];
+    let userTags = user.tags;
+        for (let j = 0; j < userTags.length; j++){
+            stArr.push(userTags[i]);
+        }
+    }
+    let counts = stArr.reduce((acc, tag)=>{
+        acc[tag] = (acc[tag] || 0) + 1
+        return acc;
+    }, {});
+    let sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+    let topThree = sorted.slice(1,4);
+    console.log(topThree);
+    return topThree;
 };
 
 var genderCount = function(array){
